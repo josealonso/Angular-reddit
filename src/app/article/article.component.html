@@ -1,0 +1,29 @@
+<div class="votes">
+  <div class="statistic">
+    <div class="value">
+      {{ votes }}
+    </div> 
+    <div class="label">
+      Points
+    </div>
+  </div>
+</div>
+<div class="column">
+  <a class="header" href="{{ link }}">   <!-- We can use template strings in attribute values -->
+    {{ title }}
+  </a>
+  <ul class="voters">
+    <li class="item">
+      <a href (click)="voteUp()"></a>
+        <i class="fa fa-arrow-up">
+          upvote
+        </i>
+    </li>
+    <li class="item">
+      <a href (click)="voteDown()"></a>
+        <i class="fa fa-arrow-down">
+          downvote
+        </i>
+    </li>
+  </ul>
+</div>
