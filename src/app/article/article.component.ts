@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Article } from './article.model';
 
 @Component({
 	selector: 'app-article',
@@ -7,23 +8,20 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 	@HostBinding('attr.class') cssClass = 'row'; // In Angular, a component host is the element this component is attached to.
-	votes: number;
-	title: string;
-	link: string;
+  article: Article;
 
 	constructor() {
-		this.title = 'Angular';
-		this.link = 'http://angular.io';
-		this.votes = 10;
+		this.article = new Article(
+      'Angular', 'http://angular.io', 10);
 	}
 
 	voteUp(): boolean {
-		this.votes += 1;
+		this.article.votes += 1;
 		return false;    // tells the browser not to propagate the event upwards
 	}
 
 	voteDown(): boolean {
-		this.votes -= 1;
+		this.article.votes -= 1;
 		return false;      
 	}
 
