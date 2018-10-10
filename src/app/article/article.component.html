@@ -12,6 +12,7 @@
   <a class="header" href="{{ article.link }}">   <!-- We can use template strings in attribute values -->
     {{ article.title }}
   </a>
+  <div class="meta">({{ article.domain() }})</div>
   <ul class="voters">
     <li class="item">
       <a href (click)="voteUp()">
