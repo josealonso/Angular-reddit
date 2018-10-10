@@ -16,12 +16,12 @@ export class ArticleComponent implements OnInit {
 	}
 
 	voteUp(): boolean {
-		this.article.votes += 1;
+		this.article.voteUp();
 		return false;    // tells the browser not to propagate the event upwards
 	}
 
 	voteDown(): boolean {
-		this.article.votes -= 1;
+		this.article.voteDown();
 		return false;      
 	}
 
