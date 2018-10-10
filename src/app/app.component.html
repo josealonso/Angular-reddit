@@ -1,21 +1,23 @@
 <form class="ui large form segment">
- <h3 class="ui header">Add a Link</h3>
+  <h3 class="ui header">Add a Link</h3>
 
- <div class="field">
- <label for="title">Title:</label>
- <input name="title" id="title" #newtitle>           <!-- binding inputs to values -->
- <!-- This syntax is called a resolve. It makes the variable newtitle available to the expressions within this view -->
-</div>
- <div class="field">
- <label for="link">Link:</label>
- <input name="link" class="nav-item nav-link" id="link" #newlink>
- </div>
-   <button (click)="addArticle(newtitle,newlink)">   <!-- binding actions to events -->
+  <div class="field">
+    <label for="title">Title:</label>
+    <input name="title" id="title" #newtitle>
+    <!-- binding inputs to values -->
+    <!-- This syntax is called a resolve. It makes the variable newtitle available to the expressions within this view -->
+  </div>
+  <div class="field">
+    <label for="link">Link:</label>
+    <input name="link" class="nav-item nav-link" id="link" #newlink>
+  </div>
+  <button (click)="addArticle(newtitle,newlink)">   <!-- binding actions to events -->
       Submit link
    </button>
- </form>
+</form>
 
- <div class="grid posts">
-     <app-article>
-     </app-article>
- </div>
+<div class="grid posts">
+  <app-article *ngFor="let article of articles" [article]="article">   
+    <!-- NgFor generates a temporary variable article and then we’re passing it in to "app-article" -->
+  </app-article>
+</div>

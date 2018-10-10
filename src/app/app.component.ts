@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
+import { Article } from './article/article.model';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: [ './app.component.css' ]
 })
-export // title = 'angular-reddit';
-class AppComponent {
+export class AppComponent {
+	articles: Article[];
+	constructor() {
+		this.articles = [
+			new Article('Angular', 'http://angular.io', 3),
+			new Article('Github', 'http://github.io', 2),
+			new Article('Wordpress', 'http://wordpress.com', 1)
+		];
+	}
 	addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
-    console.log(`Adding article title: ${title.value} and link: ${link.value}`);
-    return false;
-  }
+		console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+		return false;
+	}
 }
