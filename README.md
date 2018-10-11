@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # AngularReddit
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
@@ -29,4 +29,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # Angular-reddit
 A simple reddit-like project to learn Angular 6
->>>>>>> eab5c5c7c718ec15becaae03182e36a40eb998a1
